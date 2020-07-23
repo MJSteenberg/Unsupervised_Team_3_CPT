@@ -109,9 +109,7 @@ def main():
         solution_options = ["Problem Statement", "Exploratory Data Analysis"]
         
         solution_select = st.sidebar.selectbox("Choose Option", solution_options)
-                
-       
-        
+                       
         if solution_select == "Exploratory Data Analysis":
             st.subheader("Exploratory Data Analysis")
             st.write("""
@@ -147,7 +145,7 @@ def main():
             st.subheader("Team")
             st.write("We are a team of data scientists from Team_3_CPT.")
        
-        if solution_select == "Mission Statement":
+        if about_select == "Mission Statement":
             st.subheader("Our Mission")
             st.write("""
             We are a creative and passionate group of data scientists who are
@@ -156,7 +154,7 @@ def main():
             and integrity. We want to make our community a better place by 
             giving people tools and information to make better decisions.""")
 
-        if solution_select == "Problem Statement":
+        if about_select == "Problem Statement":
             st.subheader("Problem Statement")
             st.write("""
             To construct a recommendation algorithm based on content or 
@@ -181,7 +179,7 @@ def main():
             st.write("""Reduce transaction costs of finding and selecting 
             relevant content in an online platform.""")
         
-    if about_select == "Contact Us":
+    if page_selection == "Contact Us":
         st.title("Contact Us")
         st.write("""Have any questions? We would love to hear from you.""")
            
