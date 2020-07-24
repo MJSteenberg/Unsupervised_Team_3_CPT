@@ -114,7 +114,7 @@ def main():
         if solution_select == "Datasets":
             st.markdown("### **_Datasets_**")
             st.write("""
-            A snapshot data sets used in the training of the model.
+            A snapshot of the data sets used in training and testing the model.
                     """)
             st.markdown("#### **_Train Data_**")
             st.write(pd.DataFrame({"userId": [5163, 106343, 146790],
