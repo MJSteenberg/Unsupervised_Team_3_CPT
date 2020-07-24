@@ -235,7 +235,7 @@ def main():
         st.write("""Private Bag X756, Observatory, Western Cape,
                  South Africa""")
 
-        st.subheader("Social Media")
+        st.markdown("### **_Social Media_**")
         st.write("""LinkedIn: Team_3_CPT""")
         st.write("""Facebook: Team_3_CPT""")
         st.write("""Instagram: @team_3_cpt""")
