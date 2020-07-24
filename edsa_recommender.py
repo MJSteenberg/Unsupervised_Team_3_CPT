@@ -106,12 +106,8 @@ def main():
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.write("This page describes the winning approach.")
-        
-        solution_options = ["Datasets", "Exploratory Data Analysis"]
-        
-        solution_select = st.sidebar.selectbox("Choose Option", solution_options)
-        
-        if solution_select == "Datasets":
+                
+        def datasets():
             st.markdown("### **_Datasets_**")
             st.write("""
             A snapshot of the data sets used in training and testing the model.
@@ -126,7 +122,7 @@ def main():
             st.write(pd.DataFrame({"userId": [1, 1, 1],
                                   "movieId": [2011, 4144, 5767]}))
                        
-        if solution_select == "Exploratory Data Analysis":
+        def eda():
             st.markdown("### **_Exploratory Data Analysis_**")
             st.write("""
             A summary of the insights in the movies data set.
@@ -149,15 +145,15 @@ def main():
             ratings decreases."""
             st.image('resources/imgs/fig.png', caption = fig, use_column_width = True)
         
+        if st.sidebar.button("Datasets"):
+            datasets()
+        if st.sidebar.button("Exploratory Data Analysis"):
+            eda()
+        
     if page_selection == "About Us":
         st.title("About Us")
         
-        about_options = ["Team", "Our Mission", "Problem Statement", 
-                         "Problem Landscape", "Motivation"]
-        
-        about_select = st.sidebar.selectbox("Choose Option", about_options)
-
-        if about_select == "Team":
+        def team():
             st.markdown("### **_ Our Data Scientists_**")
                        
             siya = Image.open('resources/imgs/siya.jpg')
@@ -181,8 +177,8 @@ def main():
             st.write("The most friendliest person alive... a simple guy and a simple motto.")
             st.write(""""All I want is to be a real boy in front of a computer begging
                     my program to run." - Bongani""")
-        
-        if about_select == "Our Mission":
+             
+        def mission():
             st.markdown("### **_Our Mission_**")
             st.write("""
             We are a creative and passionate group of data scientists who are
@@ -190,32 +186,43 @@ def main():
             innovative programs and projects that promote ingenuity, inclusivity
             and integrity. We want to make our community a better place by 
             giving people tools and information to make better decisions.""")
-
-        if about_select == "Problem Statement":
+        
+        def statement():
             st.markdown("### **_Problem Statement_**")
             st.write("""
             To construct a recommendation algorithm based on content or 
             collaborative filtering, capable of accurately predicting how
             a user will rate a movie they have not yet viewed based on their 
             historical preferences.""")
-            
-        if about_select == "Problem Landscape":
+        
+        def landscape():
             st.markdown("### **_Problem Landscape_**")
             
-            cpt = """
+            st.image('resources/imgs/cpt.jpg', use_column_width = True)
+            st.write("""
             Providing an accurate and robust solution to this challenge has 
             immense economic potential, with users of the system being 
             exposed to content they would like to view or purchase - 
-            generating revenue and platform affinity."""
-            st.image('resources/imgs/cpt.jpg', caption = cpt, use_column_width = True)
+            generating revenue and platform affinity.""")
 
-        if about_select == "Motivation":
+        def motivation():
             st.markdown("### **_Motivation_**")
             st.write("""Improve customer experience by exposing users to 
             content that matches their taste.""")
             st.write("""Increase sales for service providers.""")
             st.write("""Reduce transaction costs of finding and selecting 
             relevant content in an online platform.""")
+            
+        if st.sidebar.button("Team"):
+            team()
+        if st.sidebar.button("Our Mission"):
+            mission()
+        if st.sidebar.button("Problem Statement"):
+            statement()
+        if st.sidebar.button("Problem Landscape"):
+            landscape()
+        if st.sidebar.button("Motivation"):
+            motivation()
         
     if page_selection == "Contact Us":
         st.title("Contact Us")
@@ -247,3 +254,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+s
