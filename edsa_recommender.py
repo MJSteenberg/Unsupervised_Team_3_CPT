@@ -151,7 +151,7 @@ def main():
             eda()
         
     if page_selection == "About Us":
-        st.title("About Us")
+        st.title("About Us Tendai")
         
         def team():
             st.markdown("### **_ Our Data Scientists_**")
